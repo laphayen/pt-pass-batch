@@ -1,6 +1,11 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:mydb
+    url: jdbc:mysql://127.0.0.1:3306/pass_local?zeroDateTimeBehavior=convertToNull&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: pt-pass-batch
     password: qwer1234
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+  batch:
+    jdbc:
+      initialize-schema: always
